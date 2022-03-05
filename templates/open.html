@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	
+	{% block conteudo %}
+		<h1 style="text-align: center";>Abertura de Nova Empresa </h1>
+		<form action="/open" class="container" method="POST">
+			<div class="col-xs-12">
+				<a href="/" class="btn btn-outline-warning">Voltar </a>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<input type="text" name="nome" id="nome" placeholder="Nome da Empresa" class="form-control">
+				</div>
+				<div class="col-md-6">
+					<input type="text" name="porte" id="porte" placeholder="Porte da Empresa" class="form-control">
+				</div>
+
+				<p><div class="col-md-6">
+					<input type="text" name="faturamento" id="faturamento" placeholder="Faturamento da Empresa" class="form-control">
+				</div></p>
+			</div>
+			<br>
+			<div class="row col-xs-12">
+				<button type="submit" class="btn btn-block btn-success">Abrir Empresa</button>
+			</div>
+		</form>
+		
+	{% endblock %}

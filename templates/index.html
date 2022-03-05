@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+	
+	{% block conteudo %}
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="/open"class="btn btn-outline-success">Aberturas de Empresas - 2022 </a>
+				</div>
+				<div >
+					<table class="table">
+						<thead class="table-dark">
+							<tr>
+								<th>Nome</th>
+								<th>Porte</th>
+								<th>Faturamento</th>
+								<th>Ações</th>	
+							</tr>
+						</thead>
+						<br>
+						<tbody>
+							{% for e in empresas %}
+							<tr>
+								<td>{{e.nome}}</td>
+								<td>{{e.porte}}</td>
+								<td>{{e.faturamento}}</td>
+								<td>
+									<a href="/edit/{{e.id}}" class="btn btn-block btn-secondary">Editar</a> | 	
+									<a href="/baixar/{{e.id}}" class="btn btn-block btn-danger">Baixar</a> 	
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	{% endblock %}

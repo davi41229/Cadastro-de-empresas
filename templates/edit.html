@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	
+	{% block conteudo %}
+		<h1 style="text-align: center";>Editar empresa {{ empresa.nome}}</h1>
+		<!-- PASSAR empresa como parametro -->
+		<form action="/edit/{{ empresa.id}}" class="container" method="POST">
+			<div class="col-xs-12">
+				<a href="/" class="btn btn-outline-warning">Voltar </a>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<input type="text" name="nome" id="nome" placeholder="nome da empresa" class="form-control" value="{{ empresa.nome}}">
+				</div>
+				<div class="col-md-6">
+					<input type="text" name="porte" id="porte" placeholder="porte da empresa" class="form-control" value="{{ empresa.porte}}">
+				</div>
+				<div class="col-md-6">
+					<input type="text" name="faturamento" id="faturamento" placeholder="faturamento da empresa" class="form-control" value="{{ empresa.faturamento}}">
+				</div>
+			</div>
+			<br>
+			<div class="row col-xs-12">
+				<button type="submit" class="btn btn-block btn-secondary">Finalizar Edição de Empresa</button>
+			</div>
+		</form>
+		
+	{% endblock %}
